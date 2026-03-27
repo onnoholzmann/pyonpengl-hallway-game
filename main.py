@@ -10,14 +10,25 @@ import json
 current_dir = os.path.dirname(os.path.abspath(__file__))
 scores_file = os.path.join(current_dir, "scores.json")
 def load_scores():
-    if os.path.exists(scores_file):
-        with open(scores_file, "r") as f:
-            return json.load(f)
+    # If file doesn't exist: create it
+  if not os.path.exists(scores_file):
+    with open(scores_file, "w") as f:
+      json.dump([], f)
+    return []
+  # If file exists: try loading
+  try:
+    with open(scores_file, "r") as f:
+      return json.load(f)
+  except (json.JSONDecodeError, ValueError):
+    # If file is corrupted: reset it
+    print("scores.json corrupted, resetting...")
+    with open(scores_file, "w") as f:
+      json.dump([], f)
     return []
 
 def save_scores(scores):
-    with open(scores_file, "w") as f:
-        json.dump(scores, f)
+  with open(scores_file, "w") as f:
+    json.dump(scores, f, indent=2)
 
 def add_score(scores, new_score):
     scores.append(new_score)

@@ -1,7 +1,6 @@
 # Hallway 3d game
 
 ![Main game gameplay gif](/readme_images/gameplay.gif)
-![Main game gameplay image](/readme_images/hallway2.png)
 
 This is an arcade style game about a player, who is trapped in a game. You need to try to get as many points as possible before the glitch consumes you. You start in a simple platformer, where you need to collect as many coins as possible.
 ![A coin and a gold bag in the platformer game](/readme_images/platformer.png)
@@ -9,6 +8,7 @@ You will glitch into the main game, where you are trapped in a maze of hallways,
 ![A block in the hallway](/readme_images/hallway.png)
 You can try to improve your score and get a higher highscore.
 ![The score board](/readme_images/score.png)
+![Main game gameplay image](/readme_images/hallway2.png)
 
 ## **Dependencies**
 
